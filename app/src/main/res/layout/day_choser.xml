@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Senin"
+        android:id="@+id/checkSenin"
+        android:checked="false"
+        android:textSize="16pt"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/checkSabtu"
+        android:layout_alignStart="@+id/checkSabtu" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selasa"
+        android:id="@+id/checkSelasa"
+        android:checked="false"
+        android:layout_below="@+id/checkSenin"
+        android:textSize="16pt"
+        android:layout_alignLeft="@+id/checkSenin"
+        android:layout_alignStart="@+id/checkSenin" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rabu"
+        android:id="@+id/checkRabu"
+        android:checked="false"
+        android:textSize="16pt"
+        android:layout_below="@+id/checkSelasa"
+        android:layout_alignLeft="@+id/checkSelasa"
+        android:layout_alignStart="@+id/checkSelasa" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kamis"
+        android:id="@+id/checkKamis"
+        android:checked="false"
+        android:textSize="16pt"
+        android:layout_below="@+id/checkRabu"
+        android:layout_alignLeft="@+id/checkSenin"
+        android:layout_alignStart="@+id/checkSenin" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jum&apos;at"
+        android:id="@+id/checkJumat"
+        android:checked="false"
+        android:textSize="16pt"
+        android:layout_below="@+id/checkKamis"
+        android:layout_alignLeft="@+id/checkKamis"
+        android:layout_alignStart="@+id/checkKamis" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sabtu"
+        android:id="@+id/checkSabtu"
+        android:checked="false"
+        android:textSize="16pt"
+        android:layout_below="@+id/checkJumat"
+        android:layout_alignLeft="@+id/checkMinggu"
+        android:layout_alignStart="@+id/checkMinggu" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Minggu"
+        android:textSize="16pt"
+        android:id="@+id/checkMinggu"
+        android:checked="false"
+        android:layout_below="@+id/checkSabtu"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

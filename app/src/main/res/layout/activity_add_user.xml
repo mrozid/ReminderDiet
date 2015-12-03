@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:configChanges="orientation"
+    android:screenOrientation="portrait"
+    android:background="@drawable/carbon_bg"
+    tools:context="com.diet.user.reminderdiet.AddUser">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Input User"
+        android:id="@+id/textView3"
+        android:textColor="@android:color/white"
+        android:textSize="20pt"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView3">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Nama"
+                android:id="@+id/txtViewNama"
+                android:textColor="@android:color/white"
+                android:textSize="10pt"
+                android:layout_column="0"
+                style="@style/Base.Widget.AppCompat.CompoundButton.RadioButton" />
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:background="@drawable/bg_edit_text"
+                android:ems="10"
+                android:hint="Nama"
+                android:id="@+id/inputNama"
+                android:layout_column="1" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Usia"
+                android:id="@+id/txtViewUsia"
+                android:textColor="@android:color/white"
+                android:textSize="10pt"
+                android:layout_column="0" />
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:background="@drawable/bg_edit_text"
+                android:ems="10"
+                android:hint="Usia"
+                android:id="@+id/inputUsia"
+                android:layout_column="1" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Tinggi Badan"
+                android:id="@+id/txtViewTinggiBadan"
+                android:textColor="@android:color/white"
+                android:textSize="10pt"
+                android:layout_column="0" />
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:background="@drawable/bg_edit_text"
+                android:ems="10"
+                android:hint="Tinggi Badan"
+                android:id="@+id/inputTinggiBadan"
+                android:layout_column="1" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Berat Badan"
+                android:id="@+id/txtViewBeratBadan"
+                android:textColor="@android:color/white"
+                android:textSize="10pt"
+                android:layout_column="0" />
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:background="@drawable/bg_edit_text"
+                android:hint="Berat Badan"
+                android:id="@+id/inputBeratBadan"
+                android:layout_column="1" />
+        </TableRow>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Jenis Kelamin"
+                android:id="@+id/txtViewJk"
+                android:textColor="@android:color/white"
+                android:textSize="10pt"
+                android:layout_column="0" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_column="1"
+            android:id="@+id/radioSex"
+            android:background="#ffffff">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perempuan"
+                android:textColor="@android:color/black"
+                android:id="@+id/radioPrempuan" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laki - Laki"
+                android:textColor="@android:color/black"
+                android:id="@+id/radioLaki"/>
+        </RadioGroup>
+
+
+    </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Simpan"
+                android:id="@+id/btnSimpan"
+                android:background="@drawable/bg_btn"
+                android:layout_column="1" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

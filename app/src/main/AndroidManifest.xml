@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.diet.user.reminderdiet">
+
+    <!--
+      <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Splash"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".AddUser" />
+        <activity android:name=".ViewUser" />
+        <activity android:name=".JamMakan" />
+        <activity android:name=".JamPersiapan" />
+        <activity android:name=".alarm" />
+        <activity android:name=".Makanan"></activity>
+        <activity android:name=".MenuMakanan"></activity>
+        <activity android:name=".ReminderPersiapan"></activity>
+        <activity android:name=".ReminderMakan"></activity>
+        <activity android:name=".Tips"></activity>
+        <activity android:name=".ViewTips"></activity>
+        <activity android:name=".PilihTips"></activity>
+        <activity android:name=".tabel"></activity>
+        <activity android:name=".ViewMakanan"></activity>
+        <activity android:name=".Kandungan"></activity>
+        <activity android:name=".ViewKandungan"></activity>
+        <activity android:name=".AlarmMakan"></activity>
+        <activity android:name=".AlarmPersiapan"></activity>
+
+        <receiver
+            android:name=".lib.AlarmReceiverMakan"
+            android:enabled="true">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            -->
+        </receiver>
+        <receiver
+            android:name=".lib.AlarmReceiverPersiapan"
+            android:enabled="true"></receiver>
+    </application>
+
+</manifest>
