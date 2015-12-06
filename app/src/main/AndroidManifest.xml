@@ -27,19 +27,19 @@
         <activity android:name=".JamMakan" />
         <activity android:name=".JamPersiapan" />
         <activity android:name=".alarm" />
-        <activity android:name=".Makanan"></activity>
-        <activity android:name=".MenuMakanan"></activity>
-        <activity android:name=".ReminderPersiapan"></activity>
-        <activity android:name=".ReminderMakan"></activity>
-        <activity android:name=".Tips"></activity>
-        <activity android:name=".ViewTips"></activity>
-        <activity android:name=".PilihTips"></activity>
-        <activity android:name=".tabel"></activity>
-        <activity android:name=".ViewMakanan"></activity>
-        <activity android:name=".Kandungan"></activity>
-        <activity android:name=".ViewKandungan"></activity>
-        <activity android:name=".AlarmMakan"></activity>
-        <activity android:name=".AlarmPersiapan"></activity>
+        <activity android:name=".Makanan" />
+        <activity android:name=".MenuMakanan" />
+        <activity android:name=".ReminderPersiapan" />
+        <activity android:name=".ReminderMakan" />
+        <activity android:name=".Tips" />
+        <activity android:name=".ViewTips" />
+        <activity android:name=".PilihTips" />
+        <activity android:name=".tabel" />
+        <activity android:name=".ViewMakanan" />
+        <activity android:name=".Kandungan" />
+        <activity android:name=".ViewKandungan" />
+        <activity android:name=".AlarmMakan" />
+        <activity android:name=".AlarmPersiapan" />
 
         <receiver
             android:name=".lib.AlarmReceiverMakan"
@@ -53,7 +53,9 @@
         </receiver>
         <receiver
             android:name=".lib.AlarmReceiverPersiapan"
-            android:enabled="true"></receiver>
+            android:enabled="true" />
+
+        <activity android:name=".Test"></activity>
     </application>
 
 </manifest>

@@ -29,6 +29,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:id="@+id/tbViewTips"></TableLayout>
+            android:id="@+id/tbViewTips"
+            android:baselineAligned="false"></TableLayout>
     </ScrollView>
 </RelativeLayout>

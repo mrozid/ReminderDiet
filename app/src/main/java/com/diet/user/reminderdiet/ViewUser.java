@@ -13,9 +13,11 @@ import android.widget.TextView;
 import com.diet.user.reminderdiet.lib.SQLHelper;
 import com.diet.user.reminderdiet.lib.SessionManager;
 
+import java.math.BigDecimal;
+
 public class ViewUser extends AppCompatActivity {
     Button btnHome, btnEdit;
-    TextView txtTampilNama,txtTampilKet, txtTampilUsia, txtTampilTinggiBadan, txtTampilBeratBadan, txtTampilJk, txtTampilBBideal, txtTampilKalori, txtTampilObesitas;
+    TextView txtTampilNama, txtTampilKet, txtTampilUsia, txtTampilTinggiBadan, txtTampilBeratBadan, txtTampilJk, txtTampilBBideal, txtTampilKalori, txtTampilObesitas;
     SessionManager session;
 
     @Override
@@ -94,30 +96,34 @@ public class ViewUser extends AppCompatActivity {
         txtTampilObesitas = (TextView) findViewById(R.id.txtTampilObesitas);
 
 
-        Integer tb = Integer.valueOf(tingi) / 100;
-        Integer BB = Integer.valueOf(berat);
-        Integer imf = BB / tb;
+        double tb = Double.parseDouble(tingi) / 100;
+        double bagi = tb * tb;
+        double BB = Double.parseDouble(berat);
+        double imt = BB / bagi;
         String im = null;
 
-        if (imf < 18.5) {
+
+        if (imt < 18.5) {
             im = "Kurang";
-        } else if (imf >= 18.5 && imf < 22.9) {
+        } else if (imt >= 18.5 && imt < 22.9) {
             im = "Normal";
-        } else if (imf >= 22.9 && imf <= 23.0) {
+        } else if (imt >= 22.9 && imt <= 23.0) {
             im = "Kelebihan berat badan";
-        } else if (imf > 23.0 && imf < 26.9) {
+        } else if (imt > 23.0 && imt < 26.9) {
             im = "Praobesitas";
-        } else if (imf >= 26.9) {
+        } else if (imt >= 26.9) {
             im = "Obesitas";
         }
 
-        txtTampilObesitas.setText(imf +" Kg/m \n" + im);
+
+
+        txtTampilObesitas.setText(imt + " Kg/m \n" + im);
 
         txtTampilKet = (TextView) findViewById(R.id.txtTampilKet);
-        String kate=null;
-        if(Integer.valueOf(kkl) <1500){
+        String kate = null;
+        if (Integer.valueOf(kkl) < 1500) {
             kate = "Diet Rendah 1200";
-        }else if(Integer.valueOf(kkl) >=1500){
+        } else if (Integer.valueOf(kkl) >= 1500) {
             kate = "Diet Rendah 1500";
         }
         txtTampilKet.setText(kate);
