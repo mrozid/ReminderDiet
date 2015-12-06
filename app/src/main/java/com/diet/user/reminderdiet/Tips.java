@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Display;
+import android.widget.HorizontalScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -20,7 +21,7 @@ public class Tips extends AppCompatActivity {
     SQLHelper dbHelper;
     SQLiteDatabase dbRead;
     TableLayout tl;
-    Cursor artips,olahraga;
+    Cursor artips, olahraga;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class Tips extends AppCompatActivity {
         dbHelper = new SQLHelper(Tips.this);
         dbRead = dbHelper.getReadableDatabase();
         tl = (TableLayout) findViewById(R.id.tbViewTips);
-
+        tl.setBackgroundColor(Color.parseColor("#7474FF"));
 
         isi_data();
     }
@@ -63,7 +64,7 @@ public class Tips extends AppCompatActivity {
             do {
                 TableRow trW = new TableRow(this);
                 trW.setId(count++);
-                trW.setBackgroundColor(Color.parseColor("#7474FF"));
+                // trW.setBackgroundColor(Color.parseColor("#7474FF"));
                 trW.setLayoutParams(new TableRow.LayoutParams(
                         TableRow.LayoutParams.WRAP_CONTENT,
                         TableRow.LayoutParams.WRAP_CONTENT));
@@ -108,7 +109,7 @@ public class Tips extends AppCompatActivity {
 
                 TableRow trW2 = new TableRow(this);
                 trW2.setId(count++);
-                trW2.setBackgroundColor(Color.parseColor("#7474FF"));
+                // trW2.setBackgroundColor(Color.parseColor("#7474FF"));
                 trW2.setLayoutParams(new TableRow.LayoutParams(
                         TableRow.LayoutParams.WRAP_CONTENT,
                         TableRow.LayoutParams.WRAP_CONTENT));
@@ -130,28 +131,49 @@ public class Tips extends AppCompatActivity {
             } while (artips.moveToNext());
         }
 
-      TableRow trolahraga = new TableRow(this);
-        trolahraga.setId(count++);
-        trolahraga.setLayoutParams(new TableRow.LayoutParams(
+        TableRow trW2 = new TableRow(this);
+        trW2.setId(count++);
+        //trW2.setBackgroundColor(Color.parseColor("#7474FF"));
+        trW2.setLayoutParams(new TableRow.LayoutParams(
                 TableRow.LayoutParams.WRAP_CONTENT,
                 TableRow.LayoutParams.WRAP_CONTENT));
+
+        TextView labelMakanan2 = new TextView(this);
+        labelMakanan2.setPadding(20, 0, 0, 5);
+        labelMakanan2.setId(count++);
+        labelMakanan2.setText("Tabel kalori yang di keluarkan berdasar berat badan");
+        labelMakanan2.setTextSize(19);
+        labelMakanan2.setMaxWidth(width - 25);
+        labelMakanan2.setTextColor(Color.BLACK);
+        trW2.addView(labelMakanan2);
+
+
+        tl.addView(trW2, new TableLayout.LayoutParams(
+                Toolbar.LayoutParams.WRAP_CONTENT,
+                TableLayout.LayoutParams.WRAP_CONTENT));
+
+
+        TableRow trolahraga = new TableRow(this);
+        trolahraga.setId(count++);
+        trolahraga.setPadding(5, 2, 5, 0);
+        trolahraga.setLayoutParams(new TableRow.LayoutParams(
+                TableRow.LayoutParams.MATCH_PARENT,
+                TableRow.LayoutParams.MATCH_PARENT));
 
         TableLayout tabelahraga = new TableLayout(this);
-
-        tabelahraga.setBackgroundColor(Color.parseColor("#7474FF"));
         TableRow tbr = new TableRow(this);
-        tbr.setMinimumWidth(width);
+        //tbr.setMinimumWidth(width);
         tbr.setId(count++);
         tbr.setLayoutParams(new TableRow.LayoutParams(
-                TableRow.LayoutParams.WRAP_CONTENT,
-                TableRow.LayoutParams.WRAP_CONTENT));
+                TableRow.LayoutParams.MATCH_PARENT,
+                TableRow.LayoutParams.MATCH_PARENT));
 
         TextView label1 = new TextView(this);
         label1.setId(count++);
         label1.setText("Aktifitas");
         label1.setTextSize(19);
         label1.setTextColor(Color.WHITE);
-        label1.setPadding(1, 1, 1, 1);
+        label1.setPadding(4, 4, 4, 4);
         tbr.addView(label1);
         TextView label50 = new TextView(this);
         label50.setId(count++);
@@ -190,8 +212,8 @@ public class Tips extends AppCompatActivity {
         tbr.addView(label90);
 
         tabelahraga.addView(tbr, new TableLayout.LayoutParams(
-                Toolbar.LayoutParams.WRAP_CONTENT,
-                TableLayout.LayoutParams.WRAP_CONTENT));
+                Toolbar.LayoutParams.MATCH_PARENT,
+                TableLayout.LayoutParams.MATCH_PARENT));
 
         olahraga = dbRead.rawQuery("SELECT * FROM olahraga", null);
 
@@ -199,70 +221,68 @@ public class Tips extends AppCompatActivity {
             do {
 
                 TableRow tbr1 = new TableRow(this);
-                tbr1.setMinimumWidth(width);
+                // tbr1.setMinimumWidth(width);
                 tbr1.setId(count++);
                 tbr1.setLayoutParams(new TableRow.LayoutParams(
-                        TableRow.LayoutParams.WRAP_CONTENT,
-                        TableRow.LayoutParams.WRAP_CONTENT));
+                        TableRow.LayoutParams.MATCH_PARENT,
+                        TableRow.LayoutParams.MATCH_PARENT));
 
                 TextView label11 = new TextView(this);
-                label11.setMaxWidth(400);
+                //label11.setMaxWidth(400);
                 label11.setId(count++);
-                label11.setText(olahraga.getString(olahraga.getColumnIndex("aktifitas_olahraga")));
+                label11.setText("sadbjsad asdnasd sa dsa dsa d" + olahraga.getString(olahraga.getColumnIndex("aktifitas_olahraga")));
                 label11.setTextSize(19);
                 label11.setTextColor(Color.WHITE);
-                label11.setPadding(1,1,1,1);
+                label11.setPadding(4, 4, 4, 4);
                 tbr1.addView(label11);
                 TextView label501 = new TextView(this);
                 label501.setId(count++);
                 label501.setText(olahraga.getString(olahraga.getColumnIndex("50")));
                 label501.setTextSize(19);
                 label501.setTextColor(Color.WHITE);
-                label501.setPadding(1, 1, 1, 1);
+                label501.setPadding(4, 4, 4, 4);
                 tbr1.addView(label501);
                 TextView label601 = new TextView(this);
                 label601.setId(count++);
                 label601.setText(olahraga.getString(olahraga.getColumnIndex("60")));
                 label601.setTextSize(19);
                 label601.setTextColor(Color.WHITE);
-                label601.setPadding(1, 1, 1, 1);
+                label601.setPadding(4, 4, 4, 4);
                 tbr1.addView(label601);
                 TextView label701 = new TextView(this);
                 label701.setId(count++);
                 label701.setText(olahraga.getString(olahraga.getColumnIndex("70")));
                 label701.setTextSize(19);
                 label701.setTextColor(Color.WHITE);
-                label701.setPadding(1, 1, 1, 1);
+                label701.setPadding(4, 4, 4, 4);
                 tbr1.addView(label701);
                 TextView label801 = new TextView(this);
                 label801.setId(count++);
                 label801.setText(olahraga.getString(olahraga.getColumnIndex("80")));
                 label801.setTextSize(19);
                 label801.setTextColor(Color.WHITE);
-                label801.setPadding(1, 1, 1, 1);
+                label801.setPadding(4, 4, 4, 4);
                 tbr1.addView(label801);
                 TextView label901 = new TextView(this);
                 label901.setId(count++);
                 label901.setText(olahraga.getString(olahraga.getColumnIndex("90")));
                 label901.setTextSize(19);
                 label901.setTextColor(Color.WHITE);
-                label901.setPadding(1, 1, 1, 1);
+                label901.setPadding(4, 4, 4, 4);
                 tbr1.addView(label901);
 
                 tabelahraga.addView(tbr1, new TableLayout.LayoutParams(
-                        Toolbar.LayoutParams.WRAP_CONTENT,
-                        TableLayout.LayoutParams.WRAP_CONTENT));
+                        Toolbar.LayoutParams.MATCH_PARENT,
+                        TableLayout.LayoutParams.MATCH_PARENT));
                 count++;
             } while (olahraga.moveToNext());
         }
 
-
-
         trolahraga.addView(tabelahraga);
 
         tl.addView(trolahraga, new TableLayout.LayoutParams(
-                Toolbar.LayoutParams.WRAP_CONTENT,
-                TableLayout.LayoutParams.WRAP_CONTENT));
+                Toolbar.LayoutParams.MATCH_PARENT,
+                TableLayout.LayoutParams.MATCH_PARENT));
 
 
     }

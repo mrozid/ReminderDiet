@@ -102,7 +102,6 @@ public class ViewUser extends AppCompatActivity {
         double imt = BB / bagi;
         String im = null;
 
-
         if (imt < 18.5) {
             im = "Kurang";
         } else if (imt >= 18.5 && imt < 22.9) {
@@ -115,7 +114,10 @@ public class ViewUser extends AppCompatActivity {
             im = "Obesitas";
         }
 
-
+        int decimalPlace = 2;
+        BigDecimal bd = new BigDecimal(imt);
+        bd = bd.setScale(decimalPlace, BigDecimal.ROUND_UP);
+        imt = bd.doubleValue();
 
         txtTampilObesitas.setText(imt + " Kg/m \n" + im);
 

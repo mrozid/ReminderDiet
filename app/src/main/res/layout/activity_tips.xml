@@ -24,12 +24,19 @@
         android:layout_height="match_parent"
         android:id="@+id/scrollView2" >
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/tbViewTips"
-            android:baselineAligned="false"></TableLayout>
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontalScrollView2" >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/tbViewTips"
+                android:baselineAligned="false"></TableLayout>
+        </HorizontalScrollView>
     </ScrollView>
+
 </RelativeLayout>
